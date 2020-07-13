@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<!-- MUI -->
+<link href="css/mui.min.css" rel="stylesheet" type="text/css" />
+<script src="js/mui.min.js"></script>
+<!-- JQUERY -->
+<script src="js/jquery/jquery-1.12.4.js"></script>
+<script src="js/jquery/ui/1.12.1/jquery-ui.js"></script>
+<link href="js/jquery/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<!-- MOMENT JS -->
+<script src="js/moment.js"></script>
+<!-- MATERIAL ICONS FONTS -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<head>
+
+    <title>7th Coy Toolbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+</head>
+
+<body>
+
+    <div class="mui-appbar">
+        <table width="100%">
+            <tr style="vertical-align:middle;">
+                <td class="mui--appbar-height mui-container-fluid mui--text-headline">7TH TOOLBOX</td>
+            </tr>
+        </table>
+    </div>
+
+    <ul class="mui-tabs__bar mui-tabs__bar--justified header-shadow sticky">
+        <li class="mui--is-active"><a data-mui-toggle="tab" data-mui-controls="pane-justified-1">Incident Report</a>
+        </li>
+        <li><a data-mui-toggle="tab" data-mui-controls="pane-justified-2">4D Look Up</a></li>
+
+    </ul>
+
+    <div class="mui-tabs__pane mui--is-active" id="pane-justified-1">
+        <div class="mui-container-fluid" style="margin-top:10px; overflow-x: hidden;">
+            <form id="form1" class="mui-form">
+
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input pattern="[0-9]" inputmode="numeric" type="number" id="fourDigits" name="fourDigits"
+                        onkeyup="fillName()">
+                    <label for="fourDigits">4D:</label>
+                </div>
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input type="text" id="name" name="name">
+                    <label for="name">Name:</label>
+                </div>
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input type="text" id="reason" name="reason">
+                    <label for="reason">Reason:</label>
+                </div>
+
+                <div class="mui-row" id="statusBiggerDiv">
+                    <div class="mui-textfield mui-textfield--float-label mui-col-xs-6">
+                        <input type="text" id="status1" name="status1" class="autoc">
+                        <label for="status1">Status:</label>
+                    </div>
+
+                    <div pattern="[0-9]" class="mui-textfield mui-textfield--float-label mui-col-xs-6">
+                        <input pattern="[0-9]" inputmode="numeric" type="number" id="day1" name="day1">
+                        <label for="day1">Days:</label>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="mui-container-fluid">
+            <button onclick="addStatus()" class="material-icons mui-btn mui-btn--primary">add</button>
+            <button onclick="rmStatus()" class="material-icons mui-btn mui-btn--primary" id="rmBtn"
+                disabled>remove</button>
+            <button onclick="generateOutput()" class="add mui-btn mui-btn--accent">Generate</button><br><br>
+
+            <div class="mui-textfield">
+                <!-- <textarea id="outputTextArea" rows="4" cols="50">T</textarea> -->
+                <textarea id="outputTextArea" placeholder="Generated text here" rows="5"></textarea>
+            </div>
+
+            <button onclick="copyToClipboard()" class="mui-btn mui-btn--accent">Copy</button>
+            <button onclick="clearForm()" class="mui-btn mui-btn--flat">Reset</button>
+        </div>
+    </div>
+
+
+    <div class="mui-tabs__pane" id="pane-justified-2">
+        <div class="mui-container-fluid" style="margin-top:10px;">
+            <form id="form2" class="mui-form">
+
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input pattern="[0-9]" inputmode="numeric" type="number" id="lookUp4D" name="lookUp4D"
+                        onkeyup="nameLookUp()">
+                    <label for="lookUp4D">4D:</label>
+                </div>
+
+                <div class="mui-textfield">
+                    <!-- <textarea id="outputTextArea" rows="4" cols="50">T</textarea> -->
+                    <textarea id="lookUpNameOutput" placeholder="Name:"></textarea>
+                </div>
+
+            </form>
+
+            <button onclick="lookUpCopyToClipboard()" class="mui-btn mui-btn--accent">Copy</button>
+
+        </div>
+    </div>
+
+
+</body>
+
+
+<!-- SCRIPTS & FUNCTIONS -->
+<script src="js/scripts.js"></script>
+
+</html>
