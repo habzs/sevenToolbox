@@ -205,6 +205,25 @@ $(document).on("focus", ".autoc", function () {
 
 
 
+
+var options = {
+    url: "json/namelist.json",
+
+    getValue: "name",
+
+    list: {
+        match: {
+            enabled: true
+        }
+    }
+};
+
+$("#provider-json").easyAutocomplete(options);
+
+lookUpNameOutput
+
+
+
 // Tab 2 - 4D Lookup
 
 function nameLookUp() {

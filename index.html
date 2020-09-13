@@ -13,6 +13,17 @@
 <!-- MATERIAL ICONS FONTS -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<!-- EASYAUTOCOMPLETE JS file -->
+<script src="autoComplete/jquery.easy-autocomplete.min.js"></script>
+
+<!-- EASYAUTOCOMPLETE CSS file -->
+<link rel="stylesheet" href="autoComplete/easy-autocomplete.min.css">
+
+<!-- EASYAUTOCOMPLETE Additional CSS Themes file - not required-->
+<link rel="stylesheet" href="autoComplete/easy-autocomplete.themes.min.css">
+
+
+
 
 <head>
 
@@ -31,13 +42,21 @@
         </table>
     </div>
 
+
+    <!-- TABS -->
     <ul class="mui-tabs__bar mui-tabs__bar--justified header-shadow sticky">
-        <li class="mui--is-active"><a data-mui-toggle="tab" data-mui-controls="pane-justified-1">Incident Report</a>
+        <li class="mui--is-active"><a data-mui-toggle="tab" data-mui-controls="pane-justified-1">Report</a>
         </li>
-        <li><a data-mui-toggle="tab" data-mui-controls="pane-justified-2">4D Look Up</a></li>
+        <li><a data-mui-toggle="tab" data-mui-controls="pane-justified-2">4D Look Up</a>
+        </li>
+        <li><a data-mui-toggle="tab" data-mui-controls="pane-justified-3">IPPT TIME</a>
+        </li>
 
     </ul>
 
+
+
+    <!-- TAB ONE -->
     <div class="mui-tabs__pane mui--is-active" id="pane-justified-1">
         <div class="mui-container-fluid" style="margin-top:10px; overflow-x: hidden;">
             <form id="form1" class="mui-form">
@@ -88,6 +107,7 @@
     </div>
 
 
+    <!-- TAB TWO -->
     <div class="mui-tabs__pane" id="pane-justified-2">
         <div class="mui-container-fluid" style="margin-top:10px;">
             <form id="form2" class="mui-form">
@@ -110,6 +130,28 @@
         </div>
     </div>
 
+    <!-- TAB THREE -->
+    <div class="mui-tabs__pane" id="pane-justified-3">
+        <div class="mui-container-fluid" style="margin-top:10px;">
+            <form id="form2" class="mui-form">
+
+                <div class="mui-textfield mui-textfield--float-label">
+                    <input pattern="[0-9]" inputmode="numeric" type="number" id="lookUp4D" name="lookUp4D"
+                        onkeyup="nameLookUp()">
+                    <label for="lookUp4D">4D:</label>
+                </div>
+
+                <div class="mui-textfield">
+                    <!-- <textarea id="outputTextArea" rows="4" cols="50">T</textarea> -->
+                    <textarea id="lookUpNameOutput" placeholder="Name:"></textarea>
+                </div>
+
+            </form>
+
+            <button onclick="lookUpCopyToClipboard()" class="mui-btn mui-btn--accent">Copy</button>
+
+        </div>
+    </div>
 
 </body>
 
